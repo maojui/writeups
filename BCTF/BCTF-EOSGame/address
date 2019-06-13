@@ -1,0 +1,4 @@
+url     : https://ropsten.etherscan.io/address/0x804d8B0f43C57b5Ba940c1d1132d03f1da83631F#code
+contract: 0x804d8B0f43C57b5Ba940c1d1132d03f1da83631F
+solver  : 0xA7FCADF8C8104cbAeEC7F8EBAf3b1ED58092e6Fa
+flag    : BCTF{y0u_c4n_PlAy_r34L_e0S_D0t_w1n_n0W}

@@ -1,0 +1,111 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+uint32_t cts[30][5][2] = {{{0x1c47fd1b, 0xa6f3c024},{0xbc0fab0f, 0xdd4bd804},{0x5514f450, 0x7da16c31},{0x96acc3c8, 0xe150c905},{0xc32e02e3, 0x378976f3}},
+ {{0x4c02fda0, 0x85882c17},{0x03b141a7, 0xfef02437},{0x16919a68, 0xb8a18efe},{0xf6929918, 0xe88bb00d},{0x5dc3db4c, 0x87031777}},
+ {{0xbe10ba26, 0x9c281f5a},{0xb231da05, 0xb4f0277a},{0x51b7f69c, 0x4ef43a22},{0xae39b559, 0x769de98d},{0x2398de36, 0xffbdc088}},
+ {{0x77bee2f0, 0x7de99a0a},{0xa0b54cb4, 0x1401822a},{0x1852c2a6, 0x1ec1346f},{0x5cb8ab04, 0x392ff4a6},{0x0d6e7a8c, 0x723cd2bd}},
+ {{0xda353ebf, 0x912b25a0},{0x17e49263, 0x6ac32d80},{0xc64dcda8, 0x2314dd57},{0xee6e95e1, 0xad8076dd},{0x93d01686, 0xa1b235bc}},
+ {{0x6991445b, 0x86666406},{0x7ab5b5a8, 0xe33f7c26},{0xc5db7086, 0xcdb043cd},{0xaeec1449, 0x61bb3582},{0x7921ae0c, 0xcbf8eea4}},
+ {{0x88a9b07e, 0x7de82bd1},{0xbf9c4d14, 0xa4b023b1},{0x0b538d66, 0x68cf88fd},{0x7bb12333, 0x02f21a1d},{0x34692c96, 0x3ed20f1c}},
+ {{0xe16c5a9a, 0x9b8307a0},{0xc51b3d0a, 0x82eb7f40},{0x8e5a05b3, 0xa8e736eb},{0xb1f45e4f, 0x6ea0b300},{0x9aa9069e, 0x8c7279fe}},
+ {{0x80382485, 0x3a39ae4c},{0xf267f638, 0xd1e1b6af},{0x1eeaaf4a, 0xa4c2108b},{0xf1ba93fe, 0x02ec13bc},{0x496efb7a, 0x8b4e8e81}},
+ {{0xcb80b8f4, 0xd19c156f},{0x22ba0660, 0xa8641d4f},{0x4ec02a40, 0x2c437846},{0x0ff8f6e3, 0x323c0cf6},{0x39e7fdeb, 0xdcfbf0c6}},
+ {{0x34b96334, 0x1f21a78a},{0x44950e86, 0x44f95faa},{0x454246f3, 0x3b95fd0d},{0x56c6c361, 0x817fb931},{0xfc2438b0, 0xcdcdf054}},
+ {{0x224e59a9, 0x39038f74},{0x9808c6f9, 0xd2db9754},{0xdb28045b, 0x3823df90},{0xcf125b56, 0xb10dc513},{0x13346ee5, 0x33993600}},
+ {{0x3e2de104, 0xa0e27d1c},{0xf3bc1d64, 0xfcb9757c},{0x9c593db4, 0x70160876},{0x9b2375f9, 0xaf75977a},{0x73ec4b96, 0x8d1c4373}},
+ {{0x7af4c176, 0x7638b253},{0xf53759c8, 0x91418ab3},{0xd11e80a8, 0xee3b2961},{0x3315db06, 0xf4f95d08},{0xf57b70bd, 0x64c3ed72}},
+ {{0x78734c85, 0xcdca0a26},{0x5f487edb, 0x28a33206},{0x094b324c, 0xf1fb2678},{0x12bfae38, 0xf74a7960},{0x950fa122, 0x5ac2c6f6}},
+ {{0x332c6e7b, 0xb5d73dff},{0x079e3f10, 0x4c0f351c},{0x4e129fde, 0xdd29a204},{0x97c9da56, 0x56363845},{0x4192d84a, 0xff32b0f6}},
+ {{0xe2b2ce11, 0xa880aee1},{0x5a782864, 0x7128b6c1},{0x8736d934, 0xbc657194},{0x0704ec4f, 0xb87aee22},{0xd503475c, 0x1dae4310}},
+ {{0xfadd1a82, 0x1027d5d0},{0xb2cf8681, 0x4c7cddf0},{0x5ef3c3cc, 0x18c9344f},{0x6a0963f2, 0x43ced99e},{0xe3318c55, 0x0d8cde6e}},
+ {{0x6763d5f6, 0xa9f3122f},{0x598cf4d0, 0x811b0a0f},{0xa5562a38, 0xad8c7132},{0xf698af48, 0x7540f36c},{0x044690aa, 0xa69463f0}},
+ {{0xbe575c78, 0xfd6ea3a5},{0x7966b8bf, 0x96c6db85},{0xfb8c3f25, 0xc99b00b1},{0x17d0f025, 0x174db738},{0xe738c78b, 0x796b3aba}},
+ {{0x42c46ffd, 0x14732fd7},{0x501d0cee, 0xff0b3734},{0x35502466, 0x291ec83c},{0x11a7c268, 0x6c7507dc},{0xa92dce22, 0x031d39e6}},
+ {{0xb26ec77e, 0x92dcdd1a},{0x8bd04166, 0x9a4026f6},{0x51687d03, 0xa1387272},{0x7fbb57f2, 0xf8cb56ec},{0x2ae60da7, 0x72adcd3a}},
+ {{0x801e3a27, 0xa80c100f},{0x6026581d, 0xc06418ef},{0xc118e1f0, 0x70c68e0b},{0x6519e7ac, 0x08c05604},{0xc2307f50, 0xf9edaa77}},
+ {{0xae205414, 0x4d31d678},{0x7b7749e5, 0x9499ce98},{0x68959ead, 0x214cb594},{0xc0d53968, 0xca98724e},{0x46005e51, 0xc0858980}},
+ {{0xdf62e980, 0x92882a8b},{0x9933c5c4, 0x695022ab},{0x29d3e2c4, 0x8eef9b01},{0x4103fbd8, 0xcb2882ab},{0x24fa6c18, 0x13ab8c61}},
+ {{0x9aa67e5b, 0x54199dc7},{0x24594118, 0xbd4185e7},{0xfc271dfe, 0x9006be19},{0x6beff6b5, 0xc43604f3},{0xf946170b, 0xd19d9519}},
+ {{0x36a96347, 0xb82d5670},{0xd7913531, 0x53854e50},{0x9db5be9a, 0xccfef26c},{0x08e95c69, 0xfc15264d},{0x50f05991, 0x5789c9ff}},
+ {{0x278b3012, 0xd8c20521},{0x96c48e0a, 0xe06a0dc0},{0x394d9475, 0x15d1d1de},{0x55237cf6, 0x3c3df965},{0x524f5ce8, 0x0a7b28ea}},
+ {{0xe9c103d9, 0x834494af},{0x86daa5f6, 0xbafcaccf},{0x7833858c, 0x4014707b},{0x8e225159, 0xbd50d8c7},{0x24f9bde9, 0xfc5ea0dd}},
+ {{0x7ac796b0, 0x34aae143},{0x03b1fb49, 0x5d12e963},{0x6c3d51a8, 0xab2b695c},{0x1ebe1bea, 0x06c94ad1},{0xabf1bbd0, 0x208d5bca}}};
+
+uint8_t gbox (uint8_t a, uint8_t b, uint8_t mode) {
+    uint8_t x = a + b + mode;
+    return (x << 2) | (x >> 6);
+}
+
+/* Feistel Function */
+uint32_t fbox (uint32_t plain) {
+    uint8_t p0 = plain >> 24;
+    uint8_t p1 = plain >> 16;
+    uint8_t p2 = plain >> 8;
+    uint8_t p3 = plain;
+    uint8_t t0 = p2 ^ p3;
+    uint8_t y1 = gbox(p0 ^ p1, t0, 1);
+    uint8_t y0 = gbox(p0, y1, 0);
+    uint8_t y2 = gbox(t0, y1, 0);
+    uint8_t y3 = gbox(p3, y2, 1);
+    return ((uint32_t)y3 << 24) | ((uint32_t)y2 << 16) | ((uint32_t)y1<<8) | y0;
+}
+
+void decrypt_round(int round,uint32_t key){
+    for(int i=0;i<30;i++){
+        for(int r=0;r<5;r++){
+            uint32_t tmp = cts[i][r][1];
+            cts[i][r][1] = cts[i][r][0] ^ fbox(tmp^ key);
+            cts[i][r][0] = tmp;
+        }
+    }
+}
+
+void encrypt_round(int round,uint32_t key){
+    for(int i=0;i<30;i++){
+        for(int r=0;r<5;r++){
+            uint32_t tmp = cts[i][r][0];
+            cts[i][r][0] = cts[i][r][1] ^ fbox( tmp ^ key);
+            cts[i][r][1] = tmp;
+        }
+    }
+}
+
+int main(void){
+    uint32_t l,r,dl,dr;
+    uint8_t pass;
+    for(int round=1;round<5;round++){
+        printf("Finding key %d ... \n", 4-round);
+        #pragma omp parallel for
+        for(uint32_t key=0x434823a4;key<0xffffffff;key++){
+            if(key % 0x10000000 == 0){
+                printf("%08x\n",key);
+            }
+            pass = 1;
+            for(int i=0; i<29 ;i++){
+                l  = cts[i][0][0];
+                r  = cts[i][0][1];
+                dl = cts[i][round][0];
+                dr = cts[i][round][1];
+                if (  ( l ^ fbox(r^key) ^ dl ^ fbox(dr^key) ) != 0x2 ){
+                    pass = 0 ;
+                    break;
+                }
+            }
+            if(pass == 1){
+                printf("Find key %d: 0x%08x\n", 4-round,key);
+                decrypt_round(round,key);
+                break;
+            }
+        }
+    }
+    
+    uint32_t pt000 = 0xa6d48ed4;
+    uint32_t pt001 = 0x72d5b12c;
+    uint32_t key4 = cts[0][0][0] ^ pt000;
+    uint32_t key5 = 0x72d5b12c ^ cts[0][0][0] ^ cts[0][0][1];
+    printf("key 4: 0x%08x\n", key4); // 0xcda0e046
+    printf("key 5: 0x%08x\n", key5); // 0xf212f4bb
+
+}

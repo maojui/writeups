@@ -1,0 +1,5 @@
+Our team has prepared for an ICO. However, we are worried that there might a way to exploit the smart contracts in such a way that new investors won't be able to invest anymore. Can you spot the bug and prove us right? 
+
+Each "victim" will have two investors. Your goal is to make impossible for our investor to invest money when "get_flag" is called.
+
+Target: http://142.93.103.129:3001

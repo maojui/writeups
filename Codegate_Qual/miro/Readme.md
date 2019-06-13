@@ -1,0 +1,1 @@
+[Origin Writeup](https://maojui.github.io/CTF-Writeups-2018/Codegate-2018-Miro/)

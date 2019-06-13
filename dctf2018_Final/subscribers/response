@@ -1,0 +1,36 @@
+POST /function with post data json encoded. Available methods: 
+{
+    "/get_balance": {
+        "wallet": "address",
+        "in_ether": "boolean"
+    },
+    "/new_cold_wallet": {
+        "password": "string"
+    },
+    "/send_money": {
+        "from": "address",
+        "password": "string",
+        "to": "address",
+        "amount": "amount in wei"
+    },
+    "/call_contract": {
+        "address": "contract_address",
+        "abi": "json array",
+        "from": "address",
+        "password": "string",
+        "func": "function to call",
+        "params": "json array",
+        "value": "msg.value",
+        "type": "standard|call",
+        "gas": "int",
+        "gasPrice": "int"
+    },
+    "/get_flag": {
+        "id": "numeric",
+        "target": "victim_address_where_attacker_is_vip",
+        "attacker": "attacker_address",
+        "password": "attacker_password"
+    },
+    "/get_victim": {},
+    "/": {}
+}

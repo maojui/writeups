@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.sage": "python",
+        "cmath": "c"
+    }
+}

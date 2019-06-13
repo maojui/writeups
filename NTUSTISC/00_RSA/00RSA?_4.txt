@@ -1,0 +1,1 @@
+Given the encrypted number 150815, d = 1941, and N = 435979, what is the decrypted number?

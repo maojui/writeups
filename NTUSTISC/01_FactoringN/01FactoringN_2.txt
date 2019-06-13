@@ -1,0 +1,13 @@
+Description:
+
+Written by neptunia Some more RSA! This time, there's no P and Q... this.
+
+Hint: It's like RSA 1 but harder. Have fun!
+
+File = ciphertest2.txt
+
+n: 266965481915457805187702917726550329693157
+
+e: 65537
+
+c: 78670065603555615007383828728708393504251
