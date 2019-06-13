@@ -1,0 +1,12 @@
+version: '3'
+services:
+  compiler:
+    image: "rigetti/qvm"
+    command: ["-S"]
+    ports:
+      - "5000:5000"
+  server:
+    image: "rigetti/quilc"
+    command: ["-R"]
+    ports:
+      - "5555:5555"
