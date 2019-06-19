@@ -6,7 +6,8 @@ import numpy as np
 from math import pi, sqrt, asin
 from pyquil import Program, get_qc
 from pyquil.gates import *
-from secret import flag
+# from secret import flag
+# flag = '95066ebd'
 
 size = 4
 num = 3200000
@@ -31,6 +32,7 @@ if __name__ == '__main__':
     reg = program.declare('ro', 'BIT', size)
     for i in range(size):
         program += MEASURE(i, reg[i])
+    program1 = program
     program.wrap_in_numshots_loop(num)
     result1 = qc.run(qc.compile(program))
 
@@ -40,6 +42,7 @@ if __name__ == '__main__':
     reg = program.declare('ro', 'BIT', size)
     for i in range(size):
         program += MEASURE(size+i, reg[i])
+    program2 = program
     program.wrap_in_numshots_loop(num)
     result2 = qc.run(qc.compile(program))
 
