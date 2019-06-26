@@ -3,15 +3,15 @@ import numpy  as np
 from sympy import *
 from sys import exit
 
-DEBUG = True
+DEBUG = False
 var('q:8')
 
-with open('Quantum Measure/program1', 'rb') as f:
+with open('program1', 'rb') as f:
         program1 = pickle.load(f)
-with open('Quantum Measure/program2', 'rb') as f:
-        program2 = pickle.load(f)
-with open('Quantum Measure/result', 'rb') as f:
-        cha = pickle.load(f)
+# with open('Quantum Measure/program2', 'rb') as f:
+#         program2 = pickle.load(f)
+# with open('Quantum Measure/result', 'rb') as f:
+#         cha = pickle.load(f)
 # with open('result', 'rb') as f:
 #         cha = pickle.load(f)
 
@@ -92,6 +92,7 @@ for k in range(16):
         # print(_in, int(''.join([str(o) for o in _out]),2))
         res[int(_in,2)] = int(''.join([str(o) for o in _out]),2)
     
+    print(bin(res[0]))
     tmp = []
     for i in range(16) :
         idx = list(res.keys())[list(res.values()).index(i)]
@@ -100,6 +101,7 @@ for k in range(16):
     tmp = np.array(tmp)
 
     tmp *= (e*f*g*h)
+    
     if prob.size == 0 :
         prob = tmp.copy()
     else :
