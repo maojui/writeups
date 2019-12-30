@@ -1,9 +1,6 @@
 import requests
 import numpy as np
 import random
-# np.complex(1)
-# qubits = 
-# response = requests.get('https://cryptoqkd.web.ctfcompetition.com/qkd/qubits',qubits)
 
 sess = requests.Session()
 
@@ -17,11 +14,11 @@ res = sess.post('https://cryptoqkd.web.ctfcompetition.com/qkd/qubits', json={
     'qubits': qubits,
 }).json()
 
+print(res)
 bits = [s for s, b in zip(state, res['basis']) if b == '+'][:128]
-print(bits)
+
 key = int(''.join(map(str, bits)), 2).to_bytes(16, 'big')
 shared = bytes.fromhex(res['announcement'])
 
 key2 = bytes(a ^ b for a, b in zip(key, shared)).hex()
-
 print(key2)
