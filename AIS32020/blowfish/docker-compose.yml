@@ -1,0 +1,12 @@
+
+services:
+  image: ubuntu:latest
+  working_dir: /root/workdir
+  environment:
+    - PATH=/usr/bin;
+  command: socat TCP-LISTEN:10000,reuseaddr,fork exec:'python prob.py',pty,stderr,setsid,sigint,sane
+  volumes:
+    - socat:/usr/bin/socat
+    - ./blowfish:/root/workdir/src
+  ports:
+    - "10000:10000"

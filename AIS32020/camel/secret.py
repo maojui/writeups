@@ -1,0 +1,1 @@
+FLAG = b'AIS3{Curv3_Mak3_M3_Th1nK_Ab0Ut_CaME1_A_P}'
