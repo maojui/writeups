@@ -1,12 +1,3 @@
-#!/usr/bin/python3
-
-
-with open('flag.txt', 'rb') as f:
-    flag = f.read().strip()
-
-with open('key.txt', 'rb') as f:
-    key = f.read().strip()[0]
-
-enc = bytes(c ^ key for c in flag).hex()
-
-print(enc)
+{%ƒˆ	–Pú’©(l2Ö]D¬<4?hÂ_ç®j<•oTÇyÕÜ"-¯°Y3 Â=¿;Šóæ»[Ÿj“½ğOãÂqù/#uíöw“§€ú;5êŠÙLgMV×ün
+îã EÉf•)p¾=³ÑÀâ-F3?há"2]ÀCÄDÔá@¦Ü°²¯òe5»^2<Ï“ä.s2´¿@±ÍwéøÑÁ’Ñ4Dàê¹›û>ˆóÃSHÏº9I°ÌpÀ@rxÎ±
+(Ûäed
