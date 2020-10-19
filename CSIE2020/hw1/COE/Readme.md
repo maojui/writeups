@@ -9,3 +9,5 @@
 [z3-script](./solve2.py)
 
 或是直接用 z3 炸他。
+
+by OalienO
