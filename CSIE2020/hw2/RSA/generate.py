@@ -14,7 +14,6 @@ FLAG = open('./flag', 'rb').read()
 p = getPrime(512)
 q1 = next_prime(2 * p)
 q2 = next_prime(3 * q1)
-
 n = p * q1 * q2
 e = 65537
 
