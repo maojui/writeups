@@ -2,3 +2,4 @@ __MACOSX/*
 .vscode/*
 __pycache__/*
 .DS_Store
+*.sage.py
